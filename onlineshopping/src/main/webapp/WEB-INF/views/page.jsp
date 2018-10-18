@@ -20,47 +20,53 @@
 
 <title>Online Shopping - ${title}</title>
 
-<script>
-	window.asdf='${title}';
-</script>
 <!-- Bootstrap core CSS -->
-<link href="${css}/bootstrap.min.css" rel="stylesheet">
+
+<!--  Bootstrap Theme.css -->
+<link href="${css}/bootstrap-slyme-theme.css" rel="stylesheet">
+<link href="${css}/myapp.css" rel="stylesheet">
 
 <!-- Custom styles for this template -->
-<link href="${css}/myapp.css" rel="stylesheet">
+
 
 </head>
 
 <body>
+	<div class="wrapper">
+		<!-- Navigation -->
+		<%@include file="./shared/navbar.jsp"%>
 
-	<!-- Navigation -->
-	<%@include file="./shared/navbar.jsp"%>
+		<!-- Page Content -->
 
-	<!-- Page Content -->
-	<!-- Loading the home content -->
-	<c:if test="${userClickHome==true }">
-		<%@include file="home.jsp"%>
-	</c:if>
+		<div class="content">
+			<!-- Loading the home content -->
+			<c:if test="${userClickHome==true }">
+				<%@include file="home.jsp"%>
+			</c:if>
 
-	<!-- Load only when user clicks about -->
-	<c:if test="${userClickAbout==true }">
-		<%@include file="about.jsp"%>
-	</c:if>
+			<!-- Load only when user clicks about -->
+			<c:if test="${userClickAbout==true }">
+				<%@include file="about.jsp"%>
+			</c:if>
 
-	<!-- Load only when user clicks Contact -->
-	<c:if test="${userClickContact==true }">
-		<%@include file="contact.jsp"%>
-	</c:if>
+			<!-- Load only when user clicks Contact -->
+			<c:if test="${userClickContact==true }">
+				<%@include file="contact.jsp"%>
+			</c:if>
 
-	<!-- Footer -->
-	<%@include file="./shared/footer.jsp"%>
+		</div>
+		<!-- Footer -->
+		<%@include file="./shared/footer.jsp"%>
 
-	<!-- Bootstrap core JavaScript -->
-	<script src="${js}/jquery.min.js"></script>
-	<script src="${js}/bootstrap.bundle.min.js"></script>
-	
-	<!--  myapp.js -->
-	<script src="${js}/myapp.js"></script>
+		<!-- Bootstrap core JavaScript -->
+		<script src="${js}/jquery.min.js"></script>
+		<script src="${js}/bootstrap.bundle.min.js"></script>
+
+		<!--  myapp.js -->
+		<script src="${js}/myapp.js"></script>
+
+	</div>
+
 </body>
 
 </html>
